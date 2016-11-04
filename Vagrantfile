@@ -107,21 +107,21 @@ Vagrant.configure(2) do |config|
     end
 
     # copy paste - because we need to explane 3 different port devices
-    pkg_cmd = "zpool create lldata1 -m /srv/main /dev/sdb; "
+    pkg_cmd = "zpool create lldata1 -m /srv/main /dev/sda; "
     pkg_cmd << "zfs set compression=gzip-9 lldata1; "
     pkg_cmd << "zfs set recordsize=8k lldata1; "
     pkg_cmd << "zfs set atime=off lldata1; "
-    pkg_cmd << "zpool create lldata2 -m /srv/second /dev/sdc; "
+    pkg_cmd << "zpool create lldata2 -m /srv/second /dev/sdb; "
     pkg_cmd << "zfs set compression=gzip-9 lldata2; "
     pkg_cmd << "zfs set recordsize=8k lldata2; "
     pkg_cmd << "zfs set atime=off lldata2; "
-    pkg_cmd << "zpool create lldata3 -m /srv/extension /dev/sdd; "
+    pkg_cmd << "zpool create lldata3 -m /srv/extension /dev/sdc; "
     pkg_cmd << "zfs set compression=gzip-9 lldata3; "
     pkg_cmd << "zfs set recordsize=8k lldata3; "
     pkg_cmd << "zfs set atime=off lldata3; "
     
     #temptablespace (rigth now with )
-    pkg_cmd << "zpool create lldata4 -m /srv/four /dev/sde; "
+    pkg_cmd << "zpool create lldata4 -m /srv/four /dev/sdd; "
     pkg_cmd << "zfs set compression=gzip-9 lldata4; "
 
     
