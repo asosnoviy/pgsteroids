@@ -74,3 +74,8 @@ docker run -d  $DNSOPTIONS --restart="on-failure:1" --name powa-$USERNAME-$PROJE
 docker run -d $DNSOPTIONS --restart="on-failure:1" --name=pgstudio-$USERNAME-$PROJECT \
         -p $INTERNAL:8081:8080 \
         --link postgres-$USERNAME-$PROJECT onec/pgstudio
+
+docker run -d --name pgadmin4-$USERNAME-$PROJECT \
+           --link postgres-$USERNAME-$PROJECT:db \
+           -p 5050:5050 \
+            fenglc/pgadmin4
