@@ -79,7 +79,7 @@ Vagrant.configure(2) do |config|
 
     #import key 
     pkg_cmd = "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7F438280EF8D349F; "
-    pkg_cmd << "sudo apt-get update;"
+    # pkg_cmd << "sudo apt-get update;"
     config.vm.provision :shell, :inline => pkg_cmd
    
 
